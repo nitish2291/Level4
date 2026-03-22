@@ -1,0 +1,22 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import gallery from "../content/gallery.json";
+---
+
+<BaseLayout>
+
+<h1>Gallery</h1>
+
+<div class="gallery">
+
+{gallery.map(image => (
+
+<img src={image} />
+
+))}
+
+</div>
+
+</BaseLayout>
+
+<script src="/src/scripts/lightbox.js"></script>

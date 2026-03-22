@@ -1,0 +1,19 @@
+{
+    "categories":[
+     {
+      "name":"Starters",
+      "items":[
+       {
+        "name":"Paneer Tikka",
+        "price":280,
+        "image":"/images/dish1.jpg"
+       },
+       {
+        "name":"Chicken Lollipop",
+        "price":320,
+        "image":"/images/dish2.jpg"
+       }
+      ]
+     }
+    ]
+   }
