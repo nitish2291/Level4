@@ -1,19 +1,27 @@
 {
     "categories":[
-     {
-      "name":"Starters",
-      "items":[
-       {
-        "name":"Paneer Tikka",
-        "price":280,
-        "image":"/images/dish1.jpg"
-       },
-       {
-        "name":"Chicken Lollipop",
-        "price":320,
-        "image":"/images/dish2.jpg"
-       }
-      ]
-     }
+      {
+        "name":"Starters",
+        "items":[
+          {
+            "name":"Paneer Tikka",
+            "price":280,
+            "image":"/images/paneer-tikka.jpg",
+            "type":"veg"
+          },
+          {
+            "name":"Chicken Lollipop",
+            "price":320,
+            "image":"/images/chicken-lollipop.jpg",
+            "type":"nonveg"
+          },
+          {
+            "name":"Egg Curry",
+            "price":250,
+            "image":"/images/egg-curry.jpg",
+            "type":"egg"
+          }
+        ]
+      }
     ]
-   }
+  }

@@ -5,17 +5,25 @@ import gallery from "../content/gallery.json";
 
 <BaseLayout>
 
+<section class="gallery-page">
+
 <h1>Gallery</h1>
 
-<div class="gallery">
+<div class="gallery-grid">
 
-{gallery.map(image => (
+{gallery.map((image) => (
 
-<img src={image} />
+<img
+src={image}
+alt="Level 4 Rooftop Restaurant"
+loading="lazy"
+/>
 
 ))}
 
 </div>
+
+</section>
 
 </BaseLayout>
 

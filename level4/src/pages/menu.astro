@@ -15,19 +15,66 @@ import menu from "../content/menu.json";
 
 <h2>{category.name}</h2>
 
+<div class="menu-legend">
+
+<div class="legend-item">
+<span class="food-marker veg"></span>
+Veg
+</div>
+
+<div class="legend-item">
+<span class="food-marker nonveg"></span>
+Non-Veg
+</div>
+
+<div class="legend-item">
+<span class="food-marker egg"></span>
+Egg
+</div>
+
+</div>
+
+<div class="menu-filters">
+
+<button data-filter="all" class="filter-btn active">All</button>
+
+<button data-filter="veg" class="filter-btn">🟩 Veg</button>
+
+<button data-filter="nonveg" class="filter-btn">🟥 Non-Veg</button>
+
+<button data-filter="egg" class="filter-btn">🟫 Egg</button>
+
+<button data-filter="drinks" class="filter-btn">🍹 Drinks</button>
+
+<button data-filter="dessert" class="filter-btn">🍰 Desserts</button>
+
+</div>
 <div class="menu-grid">
 
 {category.items.map(item => (
 
-<div class="menu-card">
+<div class="menu-card" data-type={item.type}>
 
 <img src={item.image} />
 
 <div class="menu-info">
 
-<h3>{item.name}</h3>
+<h3>
+{item.name}
+<span class="food-icon">
+{
+item.type === "veg" ? "🌱" :
+item.type === "nonveg" ? "🍗" :
+item.type === "egg" ? "🥚" :
+item.type === "drinks" ? "🍹" :
+item.type === "dessert" ? "🍰" : ""
+}
+</span>
+</h3>
 
 <span class="price">₹{item.price}</span>
+
+</div>
 
 </div>
 
@@ -44,3 +91,5 @@ import menu from "../content/menu.json";
 </section>
 
 </BaseLayout>
+
+<script src="/src/scripts/menu-filter.js"></script>

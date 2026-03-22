@@ -2,14 +2,214 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout>
+<BaseLayout title="Events | Level 4">
 
-<section style="padding:120px 40px">
+<section class="events-hero">
+  <div class="container">
+    <h1>Events</h1>
+    <p>Birthday parties, corporate gatherings and rooftop celebrations.</p>
+  </div>
+</section>
 
-<h1>Events</h1>
+</Layout>
 
-<p>Birthday parties, corporate gatherings and rooftop celebrations.</p>
+<section class="events-hero">
+  <div class="container">
+    <h1>Events</h1>
+    <p>Birthday parties, corporate gatherings and rooftop celebrations.</p>
+  </div>
+</section>
+
+<style>
+.events-hero{
+  padding:120px 20px;
+  text-align:center;
+}
+.events-hero h1{
+  font-size:48px;
+  margin-bottom:10px;
+}
+</style>
+
+<section class="event-types container">
+
+  <div class="event-card">
+    <img src="/images/birthday.jpg" alt="Birthday Party"/>
+    <h3>Birthday Parties</h3>
+    <p>Celebrate your special day with rooftop views, music and great food.</p>
+  </div>
+
+  <div class="event-card">
+    <img src="/images/corporate.jpg" alt="Corporate Event"/>
+    <h3>Corporate Gatherings</h3>
+    <p>Perfect venue for office parties, team dinners and client meetings.</p>
+  </div>
+
+  <div class="event-card">
+    <img src="/images/anniversary.jpg" alt="Anniversary"/>
+    <h3>Anniversary Celebrations</h3>
+    <p>Romantic rooftop dinners with candlelight arrangements.</p>
+  </div>
+
+  <div class="event-card">
+    <img src="/images/private.jpg" alt="Private Party"/>
+    <h3>Private Parties</h3>
+    <p>Reserve the rooftop space for exclusive celebrations.</p>
+  </div>
 
 </section>
 
-</BaseLayout>
+<style>
+.event-types{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:30px;
+  padding:80px 20px;
+}
+
+.event-card img{
+  width:100%;
+  border-radius:8px;
+}
+
+.event-card h3{
+  margin-top:10px;
+}
+</style>
+
+<section class="gallery-section">
+  <h2>Event Gallery</h2>
+
+  <!-- LightWidget WIDGET -->
+  <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
+
+  <iframe 
+    src="//lightwidget.com/widgets/a114ab57458e586090b7e484802db369.html"
+    scrolling="no"
+    allowtransparency="true"
+    class="lightwidget-widget"
+    style="width:100%;border:0;overflow:hidden;">
+  </iframe>
+
+</section>
+
+<style>
+.gallery-section{
+  text-align:center;
+  padding:80px 20px;
+}
+</style>
+
+<section class="packages">
+
+<h2>Event Packages</h2>
+
+<div class="package-grid">
+
+<div class="package">
+<h3>Basic Celebration</h3>
+<p>Reserved tables and standard setup</p>
+<span>₹999 / person</span>
+</div>
+
+<div class="package">
+<h3>Premium Celebration</h3>
+<p>Decor, music and event arrangements</p>
+<span>₹1299 / person</span>
+</div>
+
+<div class="package">
+<h3>Private Rooftop</h3>
+<p>Entire rooftop reserved for your event</p>
+<span>Custom Quote</span>
+</div>
+
+</div>
+
+</section>
+
+<style>
+.packages{
+padding:80px 20px;
+text-align:center;
+}
+
+.package-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+margin-top:40px;
+}
+
+.package{
+border:1px solid #333;
+padding:30px;
+border-radius:8px;
+}
+</style>
+
+<section class="venue">
+
+<h2>Venue Details</h2>
+
+<ul>
+<li>Rooftop open seating</li>
+<li>Capacity: 40–60 guests</li>
+<li>Custom decor available</li>
+<li>Music system available</li>
+<li>Multi-cuisine food</li>
+</ul>
+
+</section>
+
+<style>
+.venue{
+padding:80px 20px;
+text-align:center;
+}
+
+.venue ul{
+list-style:none;
+padding:0;
+}
+
+.venue li{
+margin:10px 0;
+}
+</style>
+
+<section class="event-booking">
+
+<h2>Host Your Event at Level 4</h2>
+
+<p>Book your rooftop celebration today.</p>
+
+<a href="tel:+919999999999" class="btn">Call to Book</a>
+
+<a href="https://wa.me/919999999999" class="btn whatsapp">
+WhatsApp Reservation
+</a>
+
+</section>
+
+<style>
+.event-booking{
+padding:100px 20px;
+text-align:center;
+}
+
+.btn{
+display:inline-block;
+padding:12px 25px;
+background:#fff;
+color:#000;
+margin:10px;
+border-radius:5px;
+text-decoration:none;
+}
+
+.whatsapp{
+background:#25D366;
+color:white;
+}
+</style>

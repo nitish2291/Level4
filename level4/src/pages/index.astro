@@ -10,24 +10,28 @@ import gallery from "../content/gallery.json";
 
 <section class="hero">
   <div class="hero-content">
+
     <h1>Level 4 Rooftop Restaurant</h1>
     <p>Dining Above The City</p>
 
-
-	<div class="rating-badge">
-
-<span class="stars">★★★★★</span>
-
-<span class="rating-text">
-4.8 Rating on Google
-</span>
-
-</div>
+    <div class="rating-badge">
+      <span class="stars">★★★★★</span>
+      <span class="rating-text">4.8 Rating on Google</span>
+    </div>
 
     <div class="hero-buttons">
       <a href="/menu" class="btn-primary">View Menu</a>
-      <a href="/contact" class="btn-secondary">Reserve Table</a>
+
+      <a
+        href="https://wa.me/919876543210?text=Hi%2C%20I%20would%20like%20to%20reserve%20a%20table%20at%20Level%204%20Rooftop%20Restaurant"
+        target="_blank"
+        class="btn-secondary"
+      >
+        Reserve Table
+      </a>
+
     </div>
+
   </div>
 </section>
 
@@ -40,16 +44,22 @@ import gallery from "../content/gallery.json";
 
 <div class="dish-grid">
 
-{menu.categories[0].items.slice(0,3).map((item)=>(
+{menu.categories[0].items.slice(0,3).map((item) => (
+
 <div class="dish-card" data-aos="zoom-in">
 
-<img src={item.image} />
+<img
+src={item.image}
+alt={item.name}
+loading="lazy"
+/>
 
 <h3>{item.name}</h3>
 
 <p>₹{item.price}</p>
 
 </div>
+
 ))}
 
 </div>
@@ -71,7 +81,8 @@ Perfect for family dinners, celebrations and evening outings.
 
 </section>
 
-<!-- AMBIENCE SECTION -->
+
+<!-- AMBIENCE -->
 
 <section class="ambience" data-aos="fade-up">
 
@@ -84,7 +95,11 @@ Relax with panoramic city views, evening breeze,
 and a vibrant dining atmosphere at Level 4.
 </p>
 
-<a href="/contact" class="btn-primary">
+<a
+href="https://wa.me/919876543210?text=Hi%2C%20I%20would%20like%20to%20reserve%20a%20table%20at%20Level%204%20Rooftop%20Restaurant"
+target="_blank"
+class="btn-primary"
+>
 Reserve Your Table
 </a>
 
@@ -92,19 +107,26 @@ Reserve Your Table
 
 </section>
 
+
 <!-- GALLERY PREVIEW -->
 
-<section class="gallery-preview">
+<section class="gallery">
+  <h2>Gallery</h2>
 
-<h2>Gallery</h2>
+  <div class="gallery-grid">
+    <img src="/images/rooftop1.jpg" />
+    <img src="/images/dish1.jpg" />
+    <img src="/images/dish2.jpg" />
+    <img src="/images/cooking.jpg" />
+    <img src="/images/food1.jpg" />
+    <img src="/images/dining.jpg" />
+	<img src="/images/mocktails.jpg" />
+    <img src="/images/party.jpg" />
+	<img src="/images/kids-birthday.jpg" />
 
-<div class="gallery-grid">
+  </div>
+</section>
 
-{gallery.slice(0,4).map((img)=>(
-<img src={img} />
-))}
-
-</div>
 
 <a href="/gallery" class="btn-primary view-gallery">
 View Full Gallery
@@ -140,6 +162,7 @@ View Full Gallery
 
 </section>
 
+
 <!-- REVIEWS -->
 
 <section class="reviews">
@@ -174,13 +197,23 @@ One of the best rooftop restaurants in Gaya. Great atmosphere.
 
 </div>
 
-<a 
-href="https://g.page/r/XXXX/review"
+<div class="review-actions">
+
+<a
+href="https://www.google.com/maps/place/?q=place_id:ChIJT6D-6VorszkRZA3l7EY1JhU"
 target="_blank"
-class="btn-primary"
->
-Read More Reviews on Google
+class="btn-secondary">
+Read Reviews
 </a>
+
+<a
+href="https://search.google.com/local/writereview?placeid=ChIJT6D-6VorszkRZA3l7EY1JhU"
+target="_blank"
+class="btn-primary">
+Leave a Google Review
+</a>
+
+</div>
 
 </section>
 
@@ -189,51 +222,54 @@ Read More Reviews on Google
 
 <section class="instagram">
 
-<h2>Follow Us on Instagram</h2>
+<h2>Our Instagram Gallery</h2>
 
-<div class="insta-grid">
+<!-- LightWidget WIDGET -->
+<script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
 
-<a href="https://www.instagram.com/level4_rooftoprestaurant/" target="_blank">
-<img src="/images/insta1.jpg">
-</a>
-
-<a href="https://www.instagram.com/level4_rooftoprestaurant/" target="_blank">
-<img src="/images/insta2.jpg">
-</a>
-
-<a href="https://www.instagram.com/level4_rooftoprestaurant/" target="_blank">
-<img src="/images/insta3.jpg">
-</a>
-
-<a href="https://www.instagram.com/level4_rooftoprestaurant/" target="_blank">
-<img src="/images/insta4.jpg">
-</a>
-
-</div>
+<iframe
+src="//lightwidget.com/widgets/a114ab57458e586090b7e484802db369.html"
+scrolling="no"
+allowtransparency="true"
+class="lightwidget-widget"
+style="width:100%;border:0;overflow:hidden;">
+</iframe>
 
 <a
 href="https://www.instagram.com/level4_rooftoprestaurant/"
 target="_blank"
 class="btn-primary follow-btn"
 >
-View More on Instagram
+Follow us on Instagram
 </a>
 
 </section>
 
-<!-- GOOGLE MAP -->
+
+<!-- MAP -->
 
 <section class="map">
 
 <h2>Visit Us</h2>
 
 <iframe
-src="<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3622.2126856100044!2d84.99984359999999!3d24.788169699999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f32b5ae9fea04f%3A0x15263546ece50d64!2sLEVEL%204%20ROOFTOP%20RESTAURANT!5e0!3m2!1sen!2sin!4v1774160118249!5m2!1sen!2sin" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>"
+src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3622.2126856100044!2d84.99984359999999!3d24.788169699999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f32b5ae9fea04f%3A0x15263546ece50d64!2sLEVEL%204%20ROOFTOP%20RESTAURANT!5e0!3m2!1sen!2sin!4v1774160118249!5m2!1sen!2sin"
 width="100%"
 height="350"
-style="border:0;">
+style="border:0;"
+allowfullscreen=""
+loading="lazy"
+referrerpolicy="no-referrer-when-downgrade">
 </iframe>
 
 </section>
 
 </BaseLayout>
+
+<div class="mobile-reserve">
+<a
+href="https://wa.me/919876543210?text=Hi%2C%20I%20would%20like%20to%20reserve%20a%20table%20at%20Level%204%20Rooftop%20Restaurant"
+target="_blank">
+Reserve Your Table on WhatsApp
+</a>
+</div>

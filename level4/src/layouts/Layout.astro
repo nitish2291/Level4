@@ -1,0 +1,77 @@
+---
+const { title = "Level 4 Rooftop Restaurant" } = Astro.props;
+import Layout from "../layouts/Layout.astro";
+---
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>{title}</title>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="nav-container">
+
+      <div class="logo">
+        <a href="/">Level 4</a>
+      </div>
+
+      <nav>
+        <a href="/">Home</a>
+        <a href="/menu">Menu</a>
+        <a href="/gallery">Gallery</a>
+        <a href="/events">Events</a>
+        <a href="/contact">Contact</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- Page Content -->
+  <main>
+    <slot />
+  </main>
+
+</body>
+</html>
+
+<style>
+
+.navbar{
+  position:fixed;
+  top:0;
+  width:100%;
+  background:black;
+  z-index:1000;
+}
+
+.nav-container{
+  max-width:1200px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 20px;
+}
+
+nav a{
+  margin-left:25px;
+  text-decoration:none;
+  color:white;
+}
+
+.logo a{
+  color:white;
+  font-weight:bold;
+  text-decoration:none;
+}
+
+main{
+  margin-top:80px;
+}
+
+</style>
