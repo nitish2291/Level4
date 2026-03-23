@@ -50,6 +50,13 @@ text-align:center;
   right:0;
   
   background:transparent;
+  
+  transform:translateY(-120%);
+  opacity:0;
+  pointer-events:none;
+  
+  transition:all .4s ease;
+  
   z-index:1000;
   }
 
@@ -57,11 +64,15 @@ text-align:center;
 background:rgba(0,0,0,0.85);
 backdrop-filter:blur(10px);
 box-shadow:0 4px 12px rgba(0,0,0,.4);
+transform:translateY(0);
+opacity:1;
+pointer-events:auto;
 }
 
 .logo img{
-height:90px;
-padding-top:20px;
+height:80px;
+display:block;
+padding-top: 20px;
 }
 
 .nav-right{
@@ -100,24 +111,62 @@ opacity:1;
 /* HERO */
 
 .hero{
-height:calc(100vh - 70px);
-background-position:center 40%;
-margin-bottom:60px;
+  z-index:2;
 
+  position:relative;
 
-background:
-linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.75)),
-url("/images/rooftop-hero.jpg");
-
-background-size:cover;
-background-position:center;
-background-repeat:no-repeat;
-
+  height:100vh;
+  
+  
+  background:
+  radial-gradient(
+  circle at 50% 35%,
+  rgba(0,0,0,.35) 0%,
+  rgba(0,0,0,.65) 55%,
+  rgba(0,0,0,.85) 100%
+  ),
+  url("/images/rooftop-hero.jpg");
+  
+  background-size:cover;
+  background-position:center;
+  
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  
+  text-align:center;
+  
+  }
+  
+  /* BIG CENTER LOGO */
+  .hero-logo img{
+    height:500px;
+    width:auto;
+    max-width:90vw;
+    filter:drop-shadow(0 8px 20px rgba(0,0,0,.6))
+drop-shadow(0 0 18px rgba(255,255,255,.15));
+    }
+    .hero-logo{
+      margin-bottom:8px;
 display:flex;
-align-items:center;
 justify-content:center;
-text-align:center;
-}
+align-items:center;
+      }
+      
+  
+  /* hero text spacing */
+  
+  .hero-content h1{
+    padding-top: 0px;
+    font-size:36px;
+    letter-spacing:.5px;
+    }
+  
+  .hero-content p{
+  font-size:20px;
+  margin-bottom:30px;
+  }
 
 .hero-content{
 
@@ -128,18 +177,12 @@ text-align:center;
   text-align:center;
   
   margin:auto;
+  margin-top:-10px;
   
   }
 
-.hero-content h1{
-margin-bottom:10px;
-}
+  
 
-.hero-content p{
-font-size:20px;
-opacity:.9;
-margin-bottom:30px;
-}
 
 /* BUTTONS */
 
@@ -348,12 +391,12 @@ padding:100px 40px;
 }
 
 .gallery-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:20px;
-max-width:1200px;
-margin:auto;
-}
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:20px;
+  max-width:1200px;
+  margin:auto;
+  }
 
 .gallery-grid img{
 width:100%;
@@ -546,7 +589,6 @@ color:white;
 
 @media (max-width:768px){
 
-.nav{ padding:8px 40px; }
 
 .links{
 position:absolute;
@@ -580,28 +622,7 @@ display:block;
         text-align:center;
         }
         
-        .gallery-grid{
         
-        display:grid;
-        
-        grid-template-columns:repeat(3,1fr);
-        
-        gap:18px;
-        
-        max-width:900px;
-        
-        margin:40px auto;
-        }
-        
-        .gallery-grid img{
-        
-        width:100%;
-        height:220px;
-        
-        object-fit:cover;
-        
-        border-radius:8px;
-        }
 
         .view-gallery{
 
@@ -733,10 +754,6 @@ display:block;
                                     
                                     }
 
-                                    html{
-                                        scroll-behavior:smooth;
-                                        }
-
                                         .menu-nav a.active{
                                             background:#FFD700;
                                             color:black;
@@ -860,10 +877,6 @@ display:block;
                                                     margin:auto;
                                                     }
 
-                                                    .instagram{
-                                                        text-align:center;
-                                                        padding:80px 20px;
-                                                        }
                                                         
                                                         .instagram-wrapper{
                                                         max-width:850px;
@@ -876,15 +889,6 @@ display:block;
                                                         overflow:hidden;
                                                         }
 
-                                                        .instagram{
-                                                            text-align:center;
-                                                            padding:80px 20px;
-                                                            }
-                                                            
-                                                            .instagram-wrapper{
-                                                            max-width:850px;
-                                                            margin:40px auto;
-                                                            }
                                                             
                                                             .instagram-cta{
                                                             margin-top:25px;
@@ -914,36 +918,7 @@ display:block;
                                                             gap:15px;
                                                             justify-content:center;
                                                             flex-wrap:wrap;
-                                                            }
-
-                                                            .visit{
-                                                                text-align:center;
-                                                                padding:90px 20px;
-                                                                background:#111;
-                                                                }
-                                                                
-                                                                .map-wrapper{
-                                                                max-width:900px;
-                                                                margin:40px auto;
-                                                                }
-                                                                
-                                                                .map-wrapper iframe{
-                                                                width:100%;
-                                                                height:350px;
-                                                                border:0;
-                                                                border-radius:10px;
-                                                                }
-                                                                
-                                                                .visit-actions{
-                                                                margin-top:25px;
-                                                                display:flex;
-                                                                gap:15px;
-                                                                justify-content:center;
-                                                                flex-wrap:wrap;
-                                                                }
-
-                                                
-                                                                  
+                                                            }  
                                                                 .events{
 
                                                                   background:
@@ -1174,3 +1149,51 @@ display:block;
                                                                                 }
                                                                                 
                                                                                 }
+
+                                                                                .scroll-indicator{
+                                                                                  position:absolute;
+                                                                                  bottom:40px;
+                                                                                  left:50%;
+                                                                                  transform:translateX(-50%);
+                                                                                  
+                                                                                  width:24px;
+                                                                                  height:40px;
+                                                                                  
+                                                                                  border:2px solid rgba(255,255,255,.6);
+                                                                                  border-radius:20px;
+                                                                                  }
+                                                                                  
+                                                                                  .scroll-indicator::before{
+                                                                                  content:"";
+                                                                                  position:absolute;
+                                                                                  
+                                                                                  top:8px;
+                                                                                  left:50%;
+                                                                                  transform:translateX(-50%);
+                                                                                  
+                                                                                  width:4px;
+                                                                                  height:8px;
+                                                                                  
+                                                                                  background:white;
+                                                                                  border-radius:2px;
+                                                                                  
+                                                                                  animation:scrollMove 1.6s infinite;
+                                                                                  }
+                                                                                  
+                                                                                  @keyframes scrollMove{
+                                                                                  
+                                                                                  0%{
+                                                                                  opacity:0;
+                                                                                  transform:translate(-50%,0);
+                                                                                  }
+                                                                                  
+                                                                                  50%{
+                                                                                  opacity:1;
+                                                                                  }
+                                                                                  
+                                                                                  100%{
+                                                                                  opacity:0;
+                                                                                  transform:translate(-50%,14px);
+                                                                                  }
+                                                                                  
+                                                                                  }
