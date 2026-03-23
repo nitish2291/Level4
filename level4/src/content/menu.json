@@ -1,5 +1,6 @@
 {
     "categories":[
+  
       {
         "name":"Starters",
         "items":[
@@ -16,12 +17,115 @@
             "type":"nonveg"
           },
           {
-            "name":"Egg Curry",
+            "name":"Egg Pakora",
             "price":250,
             "image":"/images/egg-curry.jpg",
             "type":"egg"
           }
         ]
+      },
+  
+      {
+        "name":"Indian Main Course",
+        "items":[
+          {
+            "name":"Paneer Butter Masala",
+            "price":300,
+            "image":"/images/paneer-tikka.jpg",
+            "type":"veg"
+          },
+          {
+            "name":"Chicken Kolhapuri",
+            "price":340,
+            "image":"/images/chicken-lollipop.jpg",
+            "type":"nonveg"
+          },
+          {
+            "name":"Egg Curry",
+            "price":260,
+            "image":"/images/egg-curry.jpg",
+            "type":"egg"
+          }
+        ]
+      },
+  
+      {
+        "name":"Chinese",
+        "items":[
+          {
+            "name":"Veg Hakka Noodles",
+            "price":220,
+            "image":"/images/food1.jpg",
+            "type":"veg"
+          },
+          {
+            "name":"Chicken Manchurian",
+            "price":280,
+            "image":"/images/chicken-lollipop.jpg",
+            "type":"nonveg"
+          }
+        ]
+      },
+  
+      {
+        "name":"Biryani & Rice",
+        "items":[
+          {
+            "name":"Veg Biryani",
+            "price":240,
+            "image":"/images/food1.jpg",
+            "type":"veg"
+          },
+          {
+            "name":"Chicken Biryani",
+            "price":320,
+            "image":"/images/chicken-lollipop.jpg",
+            "type":"nonveg"
+          }
+        ]
+      },
+  
+      {
+        "name":"Breads",
+        "items":[
+          {
+            "name":"Butter Naan",
+            "price":40,
+            "image":"/images/food1.jpg",
+            "type":"veg"
+          },
+          {
+            "name":"Garlic Naan",
+            "price":60,
+            "image":"/images/food1.jpg",
+            "type":"veg"
+          }
+        ]
+      },
+  
+      {
+        "name":"Beverages",
+        "items":[
+          {
+            "name":"Mocktail",
+            "price":250,
+            "image":"/images/mocktails2.jpg",
+            "type":"drinks"
+          }
+        ]
+      },
+  
+      {
+        "name":"Desserts",
+        "items":[
+          {
+            "name":"Ice Cream",
+            "price":150,
+            "image":"/images/dessert.jpg",
+            "type":"dessert"
+          }
+        ]
       }
+  
     ]
   }

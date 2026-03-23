@@ -9,30 +9,26 @@ import menu from "../content/menu.json";
 
 <h1>Our Menu</h1>
 
+<div class="menu-nav">
+
 {menu.categories.map(category => (
 
-<div class="menu-category">
+<a href={`#${category.name.replace(/\s+/g,'-').toLowerCase()}`}>
+{category.name}
+</a>
+
+))}
+
+</div>
+
+{menu.categories.map(category => (
+
+<div
+class="menu-category"
+id={category.name.replace(/\s+/g,'-').toLowerCase()}
+>
 
 <h2>{category.name}</h2>
-
-<div class="menu-legend">
-
-<div class="legend-item">
-<span class="food-marker veg"></span>
-Veg
-</div>
-
-<div class="legend-item">
-<span class="food-marker nonveg"></span>
-Non-Veg
-</div>
-
-<div class="legend-item">
-<span class="food-marker egg"></span>
-Egg
-</div>
-
-</div>
 
 <div class="menu-filters">
 
@@ -49,13 +45,18 @@ Egg
 <button data-filter="dessert" class="filter-btn">🍰 Desserts</button>
 
 </div>
+
 <div class="menu-grid">
 
 {category.items.map(item => (
 
 <div class="menu-card" data-type={item.type}>
 
-<img src={item.image} />
+<img
+src={item.image}
+alt={item.name}
+loading="lazy"
+/>
 
 <div class="menu-info">
 
@@ -78,13 +79,11 @@ item.type === "dessert" ? "🍰" : ""
 
 </div>
 
-</div>
-
 ))}
 
-</div>
+</div>  <!-- menu-grid -->
 
-</div>
+</div>  <!-- menu-category -->
 
 ))}
 
@@ -93,3 +92,5 @@ item.type === "dessert" ? "🍰" : ""
 </BaseLayout>
 
 <script src="/src/scripts/menu-filter.js"></script>
+
+<script src="/src/scripts/menu-scroll.js"></script>

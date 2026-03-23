@@ -537,3 +537,108 @@ display:block;
                             
                             box-shadow:0 -4px 12px rgba(0,0,0,.4);
                             }
+                            .menu-grid{
+                                display:grid;
+                                grid-template-columns:repeat(5,1fr);
+                                gap:20px;
+                                margin-top:30px;
+                              }
+                              
+                              .menu-card{
+                                text-align:center;
+                                font-size:14px;
+                                background:#121212;
+                                border-radius:10px;
+                                overflow:hidden;
+                                transition:transform .2s ease, box-shadow .2s ease;
+                              }
+                              
+                              .menu-card img{
+                                width:100%;
+                                aspect-ratio:1/1;
+                                object-fit:cover;
+                                display:block;
+                                transition:transform .3s ease;
+                              }
+                              
+                              /* hover polish */
+                              .menu-card:hover{
+                                transform:translateY(-4px);
+                                box-shadow:0 10px 24px rgba(0,0,0,.45);
+                              }
+                              
+                              .menu-card:hover img{
+                                transform:scale(1.06);
+                              }
+                              
+                              /* responsive fallback */
+                              @media (max-width:1100px){
+                                .menu-grid{ grid-template-columns:repeat(3,1fr); }
+                              }
+                              
+                              @media (max-width:700px){
+                                .menu-grid{ grid-template-columns:repeat(2,1fr); }
+                              }
+
+                              .menu-nav{
+
+                                position:sticky;
+                                
+                                top:70px;
+                                
+                                z-index:50;
+                                
+                                background:#0f0f0f;
+                                
+                                display:flex;
+                                
+                                gap:18px;
+                                
+                                overflow-x:auto;
+                                
+                                padding:14px 20px;
+                                
+                                border-bottom:1px solid rgba(255,255,255,.08);
+                                
+                                }
+                                
+                                .menu-nav a{
+                                
+                                color:white;
+                                
+                                text-decoration:none;
+                                
+                                padding:8px 16px;
+                                
+                                border-radius:20px;
+                                
+                                background:#1a1a1a;
+                                
+                                white-space:nowrap;
+                                
+                                font-size:14px;
+                                
+                                }
+                                
+                                .menu-nav a:hover{
+                                
+                                background:#333;
+                                
+                                }
+
+                                .menu-category{
+
+                                    margin-top:60px;
+                                    
+                                    scroll-margin-top:110px;
+                                    
+                                    }
+
+                                    html{
+                                        scroll-behavior:smooth;
+                                        }
+
+                                        .menu-nav a.active{
+                                            background:#FFD700;
+                                            color:black;
+                                            }
