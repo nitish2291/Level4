@@ -84,12 +84,12 @@ display:flex;
 gap:22px;
 }
 
-.links a{
-color:white;
-text-decoration:none;
-font-size:15px;
-opacity:.9;
-}
+.nav .links a{
+  color:white;
+  text-decoration:none;
+  font-size:15px;
+  opacity:.9;
+  }
 
 .links a:hover{
 opacity:1;
@@ -104,7 +104,7 @@ margin-bottom:60px;
 
 
 background:
-linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.65)),
+linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.75)),
 url("/images/rooftop-hero.jpg");
 
 background-size:cover;
@@ -118,9 +118,16 @@ text-align:center;
 }
 
 .hero-content{
-max-width:700px;
-padding:20px;
-}
+
+  max-width:700px;
+  
+  padding:20px;
+  
+  text-align:center;
+  
+  margin:auto;
+  
+  }
 
 .hero-content h1{
 margin-bottom:10px;
@@ -141,11 +148,12 @@ justify-content:center;
 }
 
 .btn-primary{
-
+  position:relative;
+z-index:2;
   display:inline-block;
-  
   background:#ffffff;
   color:#000;
+border:1px solid rgba(0,0,0,.08);
   
   padding:12px 26px;
   
@@ -155,19 +163,22 @@ justify-content:center;
   
   text-decoration:none;
   
-  transition:all .25s ease;
-  
   border:none;
   
   cursor:pointer;
   
+  transition:all .25s ease;
+  
+  /* add this */
+  box-shadow:0 4px 12px rgba(0,0,0,.25);
   }
   
   .btn-primary:hover{
-  
-  transform:translateY(-2px);
-  
-  box-shadow:0 6px 18px rgba(0,0,0,.35);
+    
+    transform:translateY(-2px);
+    
+    box-shadow:0 6px 18px rgba(0,0,0,.35);
+    
   
   }
 
@@ -196,13 +207,35 @@ justify-content:center;
     
     }
 
-.btn-tertiary{
-    border:1px solid #fff;
-    color:#fff;
-    padding:12px 24px;
-    text-decoration:none;
-    border-radius:6px;
-  }
+    .btn-tertiary{
+
+      border:1px solid #fff;
+      
+      color:#fff;
+      
+      padding:12px 24px;
+      
+      text-decoration:none;
+      
+      border-radius:6px;
+      
+      transition:all .25s ease;
+      
+      }
+
+  .btn-tertiary:hover{
+
+    background:white;
+    
+    color:black;
+    
+    transform:translateY(-2px);
+    
+    box-shadow:0 6px 18px rgba(0,0,0,.35);
+    
+    transition:all .25s ease;
+    
+    }
 
 /* SECTIONS */
 
@@ -707,36 +740,75 @@ display:block;
                                             color:black;
                                             }
 
-                                            .why-grid{
+                                            .feature-card{
+                                              position:relative;
+                                              height:220px;
+                                              border-radius:12px;
+                                              overflow:hidden;
+                                              background-size:cover;
+                                              background-position:center;
+                                              transition:transform .35s ease;
+                                            }
+                                            
+                                            /* zoom effect */
+                                            .feature-card::before{
+                                              content:"";
+                                              position:absolute;
+                                              inset:0;
+                                              background:inherit;
+                                              background-size:cover;
+                                              background-position:center;
+                                              transition:transform .6s ease;
+                                            }
+                                            
+                                            /* dark overlay */
+                                            .overlay{
+                                              position:absolute;
+                                              inset:0;
+                                              background:rgba(0,0,0,0.45);
+                                              display:flex;
+                                              align-items:center;
+                                              justify-content:center;
+                                              text-align:center;
+                                              transition:background .35s ease;
+                                            }
+                                            
+                                            .overlay h3{
+                                              color:white;
+                                              font-size:18px;
+                                              font-weight:600;
+                                              letter-spacing:.5px;
+                                            }
+                                            
+                                            /* HOVER EFFECT */
+                                            .feature-card:hover::before{
+                                              transform:scale(1.12);
+                                            }
+                                            
+                                            .feature-card:hover .overlay{
+                                              background:rgba(0,0,0,0.25);
+                                            }
+                                            
+                                            .feature-card:hover{
+                                              transform:translateY(-6px);
+                                              box-shadow:0 18px 40px rgba(0,0,0,0.35);
+                                            }
 
-                                                display:grid;
-                                                
-                                                grid-template-columns:repeat(4,1fr);
-                                                
-                                                gap:25px;
-                                                
-                                                max-width:900px;
-                                                
-                                                margin:40px auto;
-                                                
-                                                }
-                                                
-                                                .why-card{
-                                                
-                                                background:#141414;
-                                                
-                                                padding:30px;
-                                                
-                                                border-radius:10px;
-                                                
-                                                text-align:center;
-                                                
-                                                transition:transform .2s ease;
-                                                }
-                                                
-                                                .why-card:hover{
-                                                transform:translateY(-6px);
-                                                }
+                                            .rooftop{
+                                              background-image:url("/images/sunset.jpg");
+                                            }
+                                            
+                                            .celebration{
+                                              background-image:url("/images/celebration.jpg");
+                                            }
+                                            
+                                            .cuisine{
+                                              background-image:url("/images/food.jpg");
+                                            }
+                                            
+                                            .family{
+                                              background-image:url("/images/family-dining.jpg");
+                                            }
 
 
                                                 .event-banner{
@@ -1068,15 +1140,15 @@ display:block;
                                                                               
                                                                               }
                                                                               
-                                                                              .hero-content{
-                                                                              
-                                                                              max-width:620px;
-                                                                              
-                                                                              margin-left:8vw;   /* viewport based spacing */
-                                                                              
-                                                                              text-align:left;
-                                                                              
-                                                                              }
+                                                                              .events-hero .hero-content{
+
+                                                                                max-width:620px;
+                                                                                
+                                                                                margin-left:8vw;
+                                                                                
+                                                                                text-align:left;
+                                                                                
+                                                                                }
                                                                               
                                                                               .events-hero h1{
                                                                               font-size:52px;
