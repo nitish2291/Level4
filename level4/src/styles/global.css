@@ -1119,27 +1119,26 @@ display:block;
                                                                             }
 
                                                                             .events-hero{
-
-                                                                              padding:180px 0;
-                                                                              min-height:70vh;
+                                                                              min-height:72vh;
+                                                                              padding:140px 0;
+                                                                            
                                                                               background:
                                                                               linear-gradient(
-                                                                              to right,
-                                                                              rgba(0,0,0,.75) 0%,
-                                                                              rgba(0,0,0,.65) 35%,
-                                                                              rgba(0,0,0,.2) 70%
+                                                                                to right,
+                                                                                rgba(0,0,0,.85) 0%,
+                                                                                rgba(0,0,0,.70) 35%,
+                                                                                rgba(0,0,0,.35) 65%,
+                                                                                rgba(0,0,0,.10) 100%
                                                                               ),
-                                                                              url("/images/rooftop-party.jpg");
-                                                                              
+                                                                              url("/images/sunset-celebration.jpg");
+                                                                            
                                                                               background-size:cover;
-                                                                              background-position:center;
-                                                                              
+                                                                              background-position:center 35%;
                                                                               background-attachment:fixed;
-                                                                              
+                                                                            
                                                                               display:flex;
                                                                               align-items:center;
-                                                                              
-                                                                              }
+                                                                            }
                                                                               
                                                                               .events-hero .hero-content{
 
@@ -1151,15 +1150,19 @@ display:block;
                                                                                 
                                                                                 }
                                                                               
-                                                                              .events-hero h1{
-                                                                              font-size:52px;
-                                                                              margin-bottom:15px;
-                                                                              }
-                                                                              
-                                                                              .events-hero p{
-                                                                              margin-bottom:30px;
-                                                                              opacity:.9;
-                                                                              }
+                                                                                .events-hero h1{
+                                                                                  font-size:54px;
+                                                                                  line-height:1.15;
+                                                                                  margin-bottom:14px;
+                                                                                  text-shadow:0 8px 28px rgba(0,0,0,.6);
+                                                                                }
+                                                                                
+                                                                                .events-hero p{
+                                                                                  font-size:20px;
+                                                                                  opacity:.9;
+                                                                                  max-width:520px;
+                                                                                  margin-bottom:28px;
+                                                                                }
 
                                                                               @media (max-width:768px){
 
