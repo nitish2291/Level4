@@ -1,5 +1,5 @@
 {
-    "name": "level4",
+  "name": "level4",
   "type": "module",
   "scripts": {
     "dev": "astro dev",
@@ -7,6 +7,7 @@
     "preview": "astro preview"
   },
   "dependencies": {
+    "astro": "^4.0.0",
     "@astrojs/image": "^0.12.1"
   }
 }
