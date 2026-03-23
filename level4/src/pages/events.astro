@@ -4,101 +4,65 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 <BaseLayout title="Events | Level 4">
 
-<section class="events-hero">
-  <div class="container">
-    <h1>Events</h1>
-    <p>Birthday parties, corporate gatherings and rooftop celebrations.</p>
-  </div>
-</section>
-
-</Layout>
+<!-- HERO -->
 
 <section class="events-hero">
-  <div class="container">
-    <h1>Events</h1>
-    <p>Birthday parties, corporate gatherings and rooftop celebrations.</p>
-  </div>
+
+<div class="hero-content">
+
+<h1>Host Your Celebration at Level 4</h1>
+
+<p>
+Birthday parties, anniversaries, corporate gatherings and private rooftop events.
+</p>
+
+<a href="https://wa.me/917760669444" class="btn-primary">
+Plan Your Event
+</a>
+
+</div>
+
 </section>
 
-<style>
-.events-hero{
-  padding:120px 20px;
-  text-align:center;
-}
-.events-hero h1{
-  font-size:48px;
-  margin-bottom:10px;
-}
-</style>
+
+<!-- EVENT TYPES -->
 
 <section class="event-types container">
 
-  <div class="event-card">
-    <img src="/images/birthday.jpg" alt="Birthday Party"/>
-    <h3>Birthday Parties</h3>
-    <p>Celebrate your special day with rooftop views, music and great food.</p>
-  </div>
+<h2>Events We Host</h2>
 
-  <div class="event-card">
-    <img src="/images/corporate.jpg" alt="Corporate Event"/>
-    <h3>Corporate Gatherings</h3>
-    <p>Perfect venue for office parties, team dinners and client meetings.</p>
-  </div>
+<div class="event-grid">
 
-  <div class="event-card">
-    <img src="/images/anniversary.jpg" alt="Anniversary"/>
-    <h3>Anniversary Celebrations</h3>
-    <p>Romantic rooftop dinners with candlelight arrangements.</p>
-  </div>
+<div class="event-card">
+<img src="/images/birthday.jpg" alt="Birthday Party"/>
+<h3>Birthday Parties</h3>
+<p>Celebrate your special day with rooftop views, music and great food.</p>
+</div>
 
-  <div class="event-card">
-    <img src="/images/private.jpg" alt="Private Party"/>
-    <h3>Private Parties</h3>
-    <p>Reserve the rooftop space for exclusive celebrations.</p>
-  </div>
+<div class="event-card">
+<img src="/images/corporate.jpg" alt="Corporate Event"/>
+<h3>Corporate Gatherings</h3>
+<p>Perfect venue for office parties, team dinners and client meetings.</p>
+</div>
 
-</section>
+<div class="event-card">
+<img src="/images/anniversary.jpg" alt="Anniversary"/>
+<h3>Anniversary Celebrations</h3>
+<p>Romantic rooftop dinners with candlelight arrangements.</p>
+</div>
 
-<style>
-.event-types{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:30px;
-  padding:80px 20px;
-}
+<div class="event-card">
+<img src="/images/private.jpg" alt="Private Party"/>
+<h3>Private Parties</h3>
+<p>Reserve the rooftop space for exclusive celebrations.</p>
+</div>
 
-.event-card img{
-  width:100%;
-  border-radius:8px;
-}
-
-.event-card h3{
-  margin-top:10px;
-}
-</style>
-
-<section class="gallery-section">
-  <h2>Event Gallery</h2>
-
-  <!-- LightWidget WIDGET -->
-  <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
-
-  <iframe 
-    src="//lightwidget.com/widgets/a114ab57458e586090b7e484802db369.html"
-    scrolling="no"
-    allowtransparency="true"
-    class="lightwidget-widget"
-    style="width:100%;border:0;overflow:hidden;">
-  </iframe>
+</div>
 
 </section>
 
-<style>
-.gallery-section{
-  text-align:center;
-  padding:80px 20px;
-}
-</style>
+
+<!-- PACKAGES -->
 
 <section class="packages">
 
@@ -128,88 +92,319 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 </section>
 
-<style>
-.packages{
-padding:80px 20px;
-text-align:center;
-}
 
-.package-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
-margin-top:40px;
-}
+<!-- GALLERY -->
 
-.package{
-border:1px solid #333;
-padding:30px;
-border-radius:8px;
-}
-</style>
+<section class="gallery-section">
+
+<h2>Real Celebrations at Level 4</h2>
+
+<p>Take a look at the memories created on our rooftop.</p>
+
+<div class="instagram-wrapper">
+
+<script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
+
+<iframe
+src="//lightwidget.com/widgets/a114ab57458e586090b7e484802db369.html"
+scrolling="no"
+allowtransparency="true"
+class="lightwidget-widget">
+</iframe>
+
+</div>
+
+</section>
+
+
+<!-- VENUE DETAILS -->
 
 <section class="venue">
 
 <h2>Venue Details</h2>
 
 <ul>
-<li>Rooftop open seating</li>
-<li>Capacity: 40–60 guests</li>
-<li>Custom decor available</li>
-<li>Music system available</li>
-<li>Multi-cuisine food</li>
+
+<li>🌆 Rooftop open seating</li>
+
+<li>👥 Capacity: 40–60 guests</li>
+
+<li>🎉 Custom decor available</li>
+
+<li>🎵 Music system available</li>
+
+<li>🍜 Multi-cuisine food</li>
+
 </ul>
 
 </section>
 
-<style>
-.venue{
-padding:80px 20px;
-text-align:center;
-}
 
-.venue ul{
-list-style:none;
-padding:0;
-}
-
-.venue li{
-margin:10px 0;
-}
-</style>
+<!-- BOOKING -->
 
 <section class="event-booking">
 
-<h2>Host Your Event at Level 4</h2>
+<h2>Plan Your Event With Us</h2>
 
-<p>Book your rooftop celebration today.</p>
+<p>
+Tell us your guest count and date. We'll help you organise the perfect rooftop celebration.
+</p>
 
-<a href="tel:+919999999999" class="btn">Call to Book</a>
+<div class="booking-actions">
 
-<a href="https://wa.me/919999999999" class="btn whatsapp">
-WhatsApp Reservation
+<a href="tel:+917760669444" class="btn-secondary">
+Call Us
 </a>
+
+<a href="https://wa.me/917760669444" class="btn-primary">
+Chat on WhatsApp
+</a>
+
+</div>
 
 </section>
 
+
 <style>
-.event-booking{
-padding:100px 20px;
+
+/* HERO */
+
+.events-hero{
+
+padding:180px 20px;
+
+background:
+linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.75)),
+url("/images/rooftop-party.jpg");
+
+background-size:cover;
+background-position:center;
+
+background-attachment:fixed;
+
+text-align:center;
+
+}
+
+.events-hero h1{
+font-size:48px;
+margin-bottom:15px;
+}
+
+.events-hero p{
+max-width:600px;
+margin:0 auto 30px auto;
+opacity:.9;
+}
+
+
+/* EVENT TYPES */
+
+.event-grid{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+gap:30px;
+
+margin-top:40px;
+
+}
+
+.event-card{
+
+background:#141414;
+
+border-radius:10px;
+
+overflow:hidden;
+
+transition:transform .25s ease, box-shadow .25s ease;
+
+}
+
+.event-card:hover{
+
+transform:translateY(-6px);
+
+box-shadow:0 10px 28px rgba(0,0,0,.45);
+
+}
+
+.event-card img{
+
+width:100%;
+
+height:200px;
+
+object-fit:cover;
+
+}
+
+.event-card h3{
+margin:12px 15px 5px 15px;
+}
+
+.event-card p{
+margin:0 15px 20px 15px;
+opacity:.8;
+}
+
+
+/* PACKAGES */
+
+.packages{
+padding:90px 20px;
 text-align:center;
 }
 
-.btn{
-display:inline-block;
-padding:12px 25px;
-background:#fff;
-color:#000;
-margin:10px;
-border-radius:5px;
-text-decoration:none;
+.package-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+gap:30px;
+
+margin-top:40px;
+
 }
 
-.whatsapp{
-background:#25D366;
-color:white;
+.package{
+
+background:#141414;
+
+border-radius:10px;
+
+padding:35px;
+
+border:1px solid rgba(255,255,255,.08);
+
+transition:transform .25s ease, box-shadow .25s ease;
+
+position:relative;
+
+overflow:hidden;
+
 }
+
+.package::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+left:0;
+right:0;
+
+height:4px;
+
+background:linear-gradient(
+90deg,
+#FFD700,
+#FF6B6B,
+#6BCB77,
+#4D96FF
+);
+
+}
+
+.package:hover{
+
+transform:translateY(-6px);
+
+box-shadow:0 12px 30px rgba(0,0,0,.45);
+
+}
+
+.package span{
+
+display:block;
+
+margin-top:15px;
+
+font-weight:600;
+
+color:#FFD700;
+
+}
+
+
+/* GALLERY */
+
+.gallery-section{
+
+text-align:center;
+
+padding:90px 20px;
+
+}
+
+.instagram-wrapper{
+
+max-width:850px;
+
+margin:40px auto;
+
+}
+
+
+/* VENUE */
+
+.venue{
+
+padding:90px 20px;
+
+text-align:center;
+
+}
+
+.venue ul{
+
+list-style:none;
+
+padding:0;
+
+max-width:500px;
+
+margin:30px auto;
+
+}
+
+.venue li{
+
+margin:12px 0;
+
+opacity:.9;
+
+}
+
+
+/* BOOKING */
+
+.event-booking{
+
+padding:120px 20px;
+
+text-align:center;
+
+}
+
+.booking-actions{
+
+margin-top:30px;
+
+display:flex;
+
+gap:15px;
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+}
+
 </style>
+
+</BaseLayout>

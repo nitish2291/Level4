@@ -7,19 +7,28 @@ let current = "";
 
 sections.forEach(section => {
 
-const sectionTop = section.offsetTop - 120;
+const sectionTop = section.offsetTop - 150;
+const sectionHeight = section.offsetHeight;
 
-if (window.scrollY >= sectionTop) {
+if (
+window.scrollY >= sectionTop &&
+window.scrollY < sectionTop + sectionHeight
+) {
 current = section.getAttribute("id");
 }
 
 });
 
+/* ensure last section works */
+if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 2) {
+current = sections[sections.length - 1].id;
+}
+
 navLinks.forEach(link => {
 
 link.classList.remove("active");
 
-if(link.getAttribute("href") === "#" + current){
+if (link.getAttribute("href") === "#" + current) {
 link.classList.add("active");
 }
 
@@ -28,3 +37,4 @@ link.classList.add("active");
 }
 
 window.addEventListener("scroll", activateMenu);
+window.addEventListener("load", activateMenu);

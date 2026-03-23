@@ -1,3 +1,4 @@
+
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import menu from "../content/menu.json";
@@ -6,39 +7,54 @@ import gallery from "../content/gallery.json";
 
 <BaseLayout>
 
-<!-- HERO -->
-
 <section class="hero">
-  <div class="hero-content">
+<div class="hero-content">
 
-    <h1>Level 4 Rooftop Restaurant</h1>
-    <p>Dining Above The City</p>
+<h1>Level 4 Rooftop Restaurant</h1>
+<p>Dining Above The City</p>
 
-    <div class="rating-badge">
-      <span class="stars">★★★★★</span>
-      <span class="rating-text">4.8 Rating on Google</span>
-    </div>
+<div class="hero-buttons">
 
-    <div class="hero-buttons">
-      <a href="/menu" class="btn-primary">View Menu</a>
+<a href="/events" class="btn-secondary">
+Plan an Event
+</a>
 
-      <a
-        href="https://wa.me/919876543210?text=Hi%2C%20I%20would%20like%20to%20reserve%20a%20table%20at%20Level%204%20Rooftop%20Restaurant"
-        target="_blank"
-        class="btn-secondary"
-      >
-        Reserve Table
-      </a>
+<a href="/menu" class="btn-tertiary">
+View Menu
+</a>
 
-    </div>
+</div>
 
-  </div>
+</div>
+</section>
+
+<section class="experience" >
+
+<h2>The Rooftop Experience</h2>
+
+<p>
+Enjoy open-air dining with city views, great ambience,
+and freshly prepared Indian and Chinese cuisine.
+Perfect for family dinners, celebrations and evening outings.
+</p>
+
 </section>
 
 
-<!-- SIGNATURE DISHES -->
+<section class="event-banner >
 
-<section class="signature" data-aos="fade-up">
+<div class="event-banner-content">
+
+<h2>Celebrate Your Special Moments at Level 4</h2>
+<p>Birthdays • Anniversaries • Corporate Dinners</p>
+
+<a href="/events" class="btn-primary">Explore Event Packages</a>
+
+</div>
+
+</section>
+
+<section class="signature">
 
 <h2>Signature Dishes</h2>
 
@@ -46,13 +62,9 @@ import gallery from "../content/gallery.json";
 
 {menu.categories[0].items.slice(0,3).map((item) => (
 
-<div class="dish-card" data-aos="zoom-in">
+<div class="dish-card">
 
-<img
-src={item.image}
-alt={item.name}
-loading="lazy"
-/>
+<img src={item.image} alt={item.name} loading="lazy"/>
 
 <h3>{item.name}</h3>
 
@@ -66,76 +78,25 @@ loading="lazy"
 
 </section>
 
+<section class="gallery">
 
-<!-- EXPERIENCE -->
+<h2>Gallery</h2>
 
-<section class="experience">
-
-<h2>The Rooftop Experience</h2>
-
-<p>
-Enjoy open-air dining with city views, great ambience,
-and freshly prepared Indian and Chinese cuisine.
-Perfect for family dinners, celebrations and evening outings.
-</p>
-
-</section>
-
-
-<!-- AMBIENCE -->
-
-<section class="ambience" data-aos="fade-up">
-
-<div class="ambience-overlay">
-
-<h2>Experience Rooftop Dining Under the Stars</h2>
-
-<p>
-Relax with panoramic city views, evening breeze,
-and a vibrant dining atmosphere at Level 4.
-</p>
-
-<a
-href="https://wa.me/919876543210?text=Hi%2C%20I%20would%20like%20to%20reserve%20a%20table%20at%20Level%204%20Rooftop%20Restaurant"
-target="_blank"
-class="btn-primary"
->
-Reserve Your Table
-</a>
-
+<div class="gallery-grid">
+<img src="/images/rooftop1.jpg"/>
+<img src="/images/dish1.jpg"/>
+<img src="/images/dish2.jpg"/>
+<img src="/images/cooking.jpg"/>
+<img src="/images/food1.jpg"/>
+<img src="/images/dining.jpg"/>
+<img src="/images/mocktails.jpg"/>
+<img src="/images/party.jpg"/>
+<img src="/images/kids-birthday.jpg"/>
 </div>
 
-</section>
-
-
-<!-- GALLERY PREVIEW -->
-
-<section class="gallery">
-  <h2>Gallery</h2>
-
-  <div class="gallery-grid">
-    <img src="/images/rooftop1.jpg" />
-    <img src="/images/dish1.jpg" />
-    <img src="/images/dish2.jpg" />
-    <img src="/images/cooking.jpg" />
-    <img src="/images/food1.jpg" />
-    <img src="/images/dining.jpg" />
-	<img src="/images/mocktails.jpg" />
-    <img src="/images/party.jpg" />
-	<img src="/images/kids-birthday.jpg" />
-
-  </div>
-</section>
-
-
-<a href="/gallery" class="btn-primary view-gallery">
-View Full Gallery
-</a>
+<a href="/gallery" class="btn-primary view-gallery">View Full Gallery</a>
 
 </section>
-
-
-<!-- EVENTS -->
 
 <section class="events">
 
@@ -162,9 +123,6 @@ View Full Gallery
 
 </section>
 
-
-<!-- REVIEWS -->
-
 <section class="reviews">
 
 <h2>What Our Guests Say</h2>
@@ -172,79 +130,73 @@ View Full Gallery
 <div class="review-grid">
 
 <div class="review-card">
-<p>
-Amazing rooftop ambience and great food. Perfect place for dinner with friends.
-</p>
+<p>Amazing rooftop ambience and great food.</p>
 <h4>★★★★★</h4>
 <span>— Rahul S.</span>
 </div>
 
 <div class="review-card">
-<p>
-Loved the view and the service. Paneer tikka was excellent.
-</p>
+<p>Loved the view and the service.</p>
 <h4>★★★★★</h4>
 <span>— Priya M.</span>
 </div>
 
 <div class="review-card">
-<p>
-One of the best rooftop restaurants in Gaya. Great atmosphere.
-</p>
+<p>One of the best rooftop restaurants in Gaya.</p>
 <h4>★★★★★</h4>
 <span>— Amit K.</span>
 </div>
 
 </div>
 
-<div class="review-actions">
+</section>
 
-<a
-href="https://www.google.com/maps/place/?q=place_id:ChIJT6D-6VorszkRZA3l7EY1JhU"
-target="_blank"
-class="btn-secondary">
-Read Reviews
-</a>
+<section class="why">
 
-<a
-href="https://search.google.com/local/writereview?placeid=ChIJT6D-6VorszkRZA3l7EY1JhU"
-target="_blank"
-class="btn-primary">
-Leave a Google Review
-</a>
+<h2>Why Choose Level 4</h2>
+
+<div class="why-grid">
+
+<div class="why-card">🌆 <h3>Rooftop City Views</h3></div>
+<div class="why-card">🎉 <h3>Perfect for Celebrations</h3></div>
+<div class="why-card">🍜 <h3>Indian & Chinese Cuisine</h3></div>
+<div class="why-card">👨‍👩‍👧 <h3>Family Friendly Dining</h3></div>
 
 </div>
 
 </section>
 
-
-<!-- INSTAGRAM -->
-
 <section class="instagram">
 
-<h2>Our Instagram Gallery</h2>
+<h2>Life at Level 4</h2>
 
-<!-- LightWidget WIDGET -->
+<div class="instagram-wrapper">
+
 <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
 
 <iframe
 src="//lightwidget.com/widgets/a114ab57458e586090b7e484802db369.html"
 scrolling="no"
 allowtransparency="true"
-class="lightwidget-widget"
-style="width:100%;border:0;overflow:hidden;">
+class="lightwidget-widget">
 </iframe>
+
+</div>
+
+<div class="instagram-cta">
+
+<p>See more moments from our rooftop experience.</p>
 
 <a
 href="https://www.instagram.com/level4_rooftoprestaurant/"
 target="_blank"
-class="btn-primary follow-btn"
->
-Follow us on Instagram
+class="btn-primary follow-btn">
+Explore & Follow Us on Instagram
 </a>
 
-</section>
+</div>
 
+</section>
 
 <!-- MAP -->
 
@@ -264,12 +216,31 @@ referrerpolicy="no-referrer-when-downgrade">
 
 </section>
 
-</BaseLayout>
 
-<div class="mobile-reserve">
-<a
-href="https://wa.me/919876543210?text=Hi%2C%20I%20would%20like%20to%20reserve%20a%20table%20at%20Level%204%20Rooftop%20Restaurant"
-target="_blank">
-Reserve Your Table on WhatsApp
+<section class="visit">
+
+<div class="visit-actions">
+
+<a href="tel:+917760669444" class="btn-secondary">
+📞 Call Us
 </a>
+
+<a
+href="https://wa.me/917760669444"
+target="_blank"
+class="btn-primary">
+💬 Reserve on WhatsApp
+</a>
+
 </div>
+
+</section>
+
+<a 
+href="https://wa.me/917760669444" 
+target="_blank"
+class="mobile-reserve"
+>
+Reserve Table • WhatsApp
+</a>
+</BaseLayout>
