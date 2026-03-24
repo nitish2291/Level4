@@ -4,8 +4,6 @@
 <img src="/images/logo.png" alt="Level 4 Rooftop Restaurant">
 </a>
 
-<div class="nav-right">
-
 <div class="nav-rating">
 <span class="nav-stars">★★★★★</span>
 <span>4.8</span>
@@ -25,6 +23,15 @@
 
 </div>
 
-</div>
-
 </nav>
+
+<script is:inline>
+
+const toggle = document.querySelector(".menu-toggle");
+const links = document.querySelector(".links");
+
+toggle.addEventListener("click", () => {
+links.classList.toggle("active");
+});
+
+</script>

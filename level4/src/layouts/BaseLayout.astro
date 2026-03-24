@@ -80,5 +80,25 @@ sections.forEach(section => observer.observe(section));
 });
 
 </script>
+
+<script is:inline>
+
+const reserveBar = document.querySelector(".mobile-reserve");
+
+if(reserveBar){
+
+window.addEventListener("scroll", () => {
+
+if(window.scrollY > 250){
+reserveBar.classList.add("show");
+}else{
+reserveBar.classList.remove("show");
+}
+
+});
+
+}
+
+</script>
 </body>
 </html>
