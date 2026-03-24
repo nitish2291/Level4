@@ -82,10 +82,10 @@ pointer-events:auto;
 }
 
 .logo img{
-height:80px;
-display:block;
-padding-top: 20px;
-}
+  height:90px;
+  width:auto;
+  display:block;
+  }
 
 .nav-right{
 display:flex;
@@ -94,18 +94,30 @@ gap:30px;
 }
 
 .nav-rating{
-display:flex;
-align-items:center;
-gap:25px;
-font-size:18px;
-margin-top:-4px;
-}
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:16px;
+  margin-top:-2px;
+  text-decoration:none;
+  color:white;
+  }
 
-.nav-stars{ color:#FFD700; }
+  .google-icon{
+    height:14px;
+    width:auto;
+    margin-left:2px;
+    }
+
+.nav-stars{ color:#FFD700;
+  font-size:15px;
+  letter-spacing:2px;
+ }
 
 .links{
 display:flex;
 gap:30px;
+margin-left:20px;
 }
 
 .nav .links a{
@@ -1223,20 +1235,26 @@ display:block;
                                                                                         
                                                                                         }
 
+
+                                                                                        @media (max-width:768px){
+
+                                                                                          .nav{
+                                                                                          padding:0 16px;
+                                                                                          }
+                                                                                          
+                                                                                          .nav-rating{
+                                                                                          gap:4px;
+                                                                                          font-size:14px;
+                                                                                          }
+                                                                                          
+                                                                                          }
+
                                                                                         html, body{
                                                                                           overflow-x:hidden;
                                                                                           max-width:100%;
                                                                                           }
 
-                                                                                          @media (max-width:768px){
-
-                                                                                            .nav-rating{
-                                                                                            position:absolute;
-                                                                                            left:50%;
-                                                                                            transform:translateX(-50%);
-                                                                                            }
-                                                                                            
-                                                                                            }
+ 
 
                                                                                             @media (max-width:768px){
 
