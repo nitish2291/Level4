@@ -1,10 +1,8 @@
-body{
-  overflow-x:hidden;
-  }
 /* GLOBAL BASE */
 
 body{
 font-family:'Inter',sans-serif;
+overflow-x:hidden;
 margin:0;
 color:white;
 
@@ -16,6 +14,10 @@ linear-gradient(
 #0d0d0d 100%
 );
 }
+
+*{
+  box-sizing:border-box;
+  }
 
 html{
 scroll-behavior:smooth;
@@ -61,6 +63,14 @@ text-align:center;
   
   z-index:1000;
   }
+
+  @media (max-width:768px){
+
+    .nav{
+    padding:0 16px;
+    }
+    
+    }
 
 .nav.scrolled{
 background:rgba(0,0,0,0.85);
@@ -286,6 +296,8 @@ border:1px solid rgba(0,0,0,.08);
 section{
 padding:100px 40px;
 width:100%;
+max-width:1200px;
+margin:0 auto;
 }
 
 /* SIGNATURE DISHES */
@@ -585,6 +597,7 @@ cursor:pointer;
 background:none;
 border:none;
 color:white;
+margin-right:-10px;
 }
 
 @media (max-width:768px){
@@ -1195,6 +1208,7 @@ display:block;
 
                                                                                     section{
                                                                                     padding:80px 20px;
+                                                                                    max-width:100%;
                                                                                     }
                                                                                     
                                                                                     }
@@ -1213,3 +1227,33 @@ display:block;
                                                                                           overflow-x:hidden;
                                                                                           max-width:100%;
                                                                                           }
+
+                                                                                          @media (max-width:768px){
+
+                                                                                            .nav-rating{
+                                                                                            position:absolute;
+                                                                                            left:50%;
+                                                                                            transform:translateX(-50%);
+                                                                                            }
+                                                                                            
+                                                                                            }
+
+                                                                                            @media (max-width:768px){
+
+                                                                                              .logo{
+                                                                                              z-index:2;
+                                                                                              }
+                                                                                              
+                                                                                              .menu-toggle{
+                                                                                              z-index:2;
+                                                                                              }
+                                                                                              
+                                                                                              }
+
+                                                                                              @media (max-width:768px){
+
+                                                                                                .nav{
+                                                                                                padding:0 16px;
+                                                                                                }
+                                                                                                
+                                                                                                }
