@@ -7,7 +7,7 @@ let current = "";
 
 sections.forEach(section => {
 
-const sectionTop = section.offsetTop - 150;
+const sectionTop = section.offsetTop - 220;
 const sectionHeight = section.offsetHeight;
 
 if (
