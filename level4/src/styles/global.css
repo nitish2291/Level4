@@ -752,17 +752,7 @@ display:block;
 
                               .menu-page{
                                 padding-top:120px;
-                              }
-
-                              @media (max-width:768px){
-
-                                .menu-nav{
-                                  overflow-x:auto;
-                                  justify-content:flex-start;
-                                }
-                                
-                                }
-                                
+                              }                             
                                 .menu-nav a{
                                 
                                 color:white;
@@ -1247,27 +1237,11 @@ display:block;
                                                                                         }
                                                                                         
                                                                                         }
-
-
-                                                                                        @media (max-width:768px){
-
-                                                                                          .nav{
-                                                                                          padding:0 16px;
-                                                                                          }
                                                                                           
                                                                                           .nav-rating{
                                                                                           gap:4px;
                                                                                           font-size:14px;
                                                                                           }
-                                                                                          
-                                                                                          }
-
-                                                                                        html, body{
-                                                                                          overflow-x:hidden;
-                                                                                          max-width:100%;
-                                                                                          }
-
- 
 
                                                                                             @media (max-width:768px){
 
@@ -1281,13 +1255,9 @@ display:block;
                                                                                               
                                                                                               }
 
-                                                                                              @media (max-width:768px){
 
-                                                                                                .nav{
-                                                                                                padding:0 16px;
-                                                                                                }
                                                                                                 
-                                                                                                }
+                                                                                                
 
                                                                                                 @media (max-width: 768px) {
                                                                                                   .instagram-wrapper {
