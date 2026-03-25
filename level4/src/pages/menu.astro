@@ -11,6 +11,15 @@ import menu from "../content/menu.json";
 
 <div class="menu-nav">
 
+<label class="veg-switch-inline">
+
+<input type="checkbox" id="vegMode">
+
+<span class="veg-slider"></span>
+
+<span class="veg-text">Veg Mode 🌿</span>
+
+</label>
 {menu.categories.map(category => (
 
 <a href={`#${category.name.replace(/\s+/g,'-').toLowerCase()}`}>
@@ -30,27 +39,11 @@ id={category.name.replace(/\s+/g,'-').toLowerCase()}
 
 <h2>{category.name}</h2>
 
-<div class="menu-filters">
-
-<button data-filter="all" class="filter-btn active">All</button>
-
-<button data-filter="veg" class="filter-btn">🟩 Veg</button>
-
-<button data-filter="nonveg" class="filter-btn">🟥 Non-Veg</button>
-
-<button data-filter="egg" class="filter-btn">🟫 Egg</button>
-
-<button data-filter="drinks" class="filter-btn">🍹 Drinks</button>
-
-<button data-filter="dessert" class="filter-btn">🍰 Desserts</button>
-
-</div>
-
 <div class="menu-grid">
 
 {category.items.map(item => (
 
-<div class="menu-card" data-type={item.type}>
+<div class={`menu-card ${item.type}`}>
 
 <img
 src={item.image}
@@ -91,6 +84,24 @@ item.type === "dessert" ? "🍰" : ""
 
 </BaseLayout>
 
-<script src="/src/scripts/menu-filter.js"></script>
+<script src="/src/scripts/menu-scroll.js"></script>
 
 <script src="/src/scripts/menu-scroll.js"></script>
+
+<script>
+
+const vegToggle = document.getElementById("vegMode");
+
+vegToggle.addEventListener("change", () => {
+
+document.body.classList.toggle("veg-active");
+
+const nonVegItems = document.querySelectorAll(".nonveg, .egg");
+
+nonVegItems.forEach(item => {
+item.style.display = vegToggle.checked ? "none" : "block";
+});
+
+});
+
+</script>
