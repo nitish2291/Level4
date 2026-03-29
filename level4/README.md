@@ -1,43 +1,221 @@
-# Astro Starter Kit: Minimal
+# Level 4 — Restaurant Website
 
-```sh
-npm create astro@latest -- --template minimal
+## 🚀 Project Overview
+
+Static site built with Astro.
+Menu is generated via script and rendered dynamically with filters (Veg Mode).
+
+---
+
+## 📦 Setup (First Time Only)
+
+```bash
+npm install
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+---
 
-## 🚀 Project Structure
+## ▶️ Run the App
 
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+```bash
+npm run dev
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Open:
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+```
+http://localhost:4321
+```
 
-Any static assets, like images, can be placed in the `public/` directory.
+---
 
-## 🧞 Commands
+## 🧠 Important Folder Rules
 
-All commands are run from the root of the project, from a terminal:
+| Folder    | Purpose                      | Accessible via URL |
+| --------- | ---------------------------- | ------------------ |
+| `/public` | Static assets (images, PDFs) | ✅ YES              |
+| `/src`    | Code, JSON, components       | ❌ NO               |
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+👉 Example:
 
-## 👀 Want to learn more?
+* `/public/menu.pdf` → works at `/menu.pdf`
+* `/src/content/menu.pdf` → **404**
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+---
+
+## 📄 Full Menu PDF
+
+Place file here:
+
+```
+/public/menu.pdf
+```
+
+Access via:
+
+```html
+<a href="/menu.pdf" target="_blank">Browse Full Menu</a>
+```
+
+---
+
+## 🧾 Menu JSON (Auto Generated)
+
+Menu lives at:
+
+```
+/src/content/menu.json
+```
+
+DO NOT edit manually if using generator.
+
+---
+
+## ⚙️ Generate Menu JSON
+
+Script:
+
+```
+/scripts/generateMenu.js
+```
+
+### Run it:
+
+```bash
+node scripts/generateMenu.js
+```
+
+---
+
+## ⚠️ Common Errors (You Already Hit These)
+
+### 1. `require is not defined`
+
+Fix:
+
+```js
+import fs from "fs";
+```
+
+Reason:
+
+* Project uses `"type": "module"`
+
+---
+
+### 2. Wrong working directory
+
+❌ Don’t run from `/src`
+
+✔ Always run from root:
+
+```bash
+node scripts/generateMenu.js
+```
+
+---
+
+### 3. Images not loading
+
+Ensure images exist:
+
+```
+/public/images/menu/
+```
+
+Required:
+
+```
+soup.jpg
+drinks.jpg
+starters.jpg
+tandoor-veg.jpg
+tandoor-nonveg.jpg
+chinese.jpg
+biryani.jpg
+curry.jpg
+rice.jpg
+dal.jpg
+bread.jpg
+thali.jpg
+default.jpg
+```
+
+---
+
+## 🥗 Veg Mode Filter Logic
+
+* Hides:
+
+  * `nonveg`
+  * `egg`
+* Shows:
+
+  * `veg`
+
+👉 Works automatically for all categories (including Thali)
+
+---
+
+## 🧱 Menu Structure (Important)
+
+Keep categories separate:
+
+* Veg Starters
+* Non-Veg Starters
+* Tandoor (Veg)
+* Tandoor (Non-Veg)
+* Chinese
+* Biryani
+* Main Course
+* Thali
+
+❌ Don’t mix veg + nonveg in same category
+
+---
+
+## 🎯 Key Design Decisions
+
+* Images assigned at **category level**
+* JSON contains `image` per item (no runtime mapping)
+* Filtering done via DOM (not re-rendering)
+
+---
+
+## 🧪 Dev Workflow
+
+1. Update `/scripts/generateMenu.js`
+2. Run:
+
+   ```bash
+   node scripts/generateMenu.js
+   ```
+3. Refresh browser
+
+---
+
+## 🧨 Things That Will Break If You Forget
+
+* PDF inside `/src` → 404
+* Missing images → broken UI
+* Mixing categories → filter bugs
+* Editing JSON manually → gets overwritten
+
+---
+
+## 📈 Future Improvements (Optional)
+
+* Search (with highlight + category awareness)
+* Class-based filtering (remove inline styles)
+* Lazy load images
+* Popular / Recommended tagging
+
+---
+
+## 🧠 Bottom Line
+
+* Data → controlled via script
+* UI → driven by JSON
+* Assets → must be in `/public`
+
+Keep it simple. Don’t over-engineer.

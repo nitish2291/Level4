@@ -13,6 +13,10 @@ import menu from "../content/menu.json";
 
 <label class="veg-switch-inline">
 
+<a href="/menu.pdf" target="_blank" class="menu-full-btn">
+  Browse Full Menu
+</a>
+
 <input type="checkbox" id="vegMode">
 
 <span class="veg-slider"></span>
@@ -46,9 +50,9 @@ id={category.name.replace(/\s+/g,'-').toLowerCase()}
 <div class={`menu-card ${item.type}`}>
 
 <img
-src={item.image}
-alt={item.name}
-loading="lazy"
+  src={item.image || "/images/menu/dish.png"}
+  alt={item.name}
+  loading="lazy"
 />
 
 <div class="menu-info">
@@ -86,22 +90,95 @@ item.type === "dessert" ? "🍰" : ""
 
 <script src="/src/scripts/menu-scroll.js"></script>
 
-<script src="/src/scripts/menu-scroll.js"></script>
-
 <script>
-
 const vegToggle = document.getElementById("vegMode");
+const categories = Array.from(document.querySelectorAll(".menu-category"));
+const navLinks = Array.from(document.querySelectorAll(".menu-nav a"));
+
+// 🔥 Pre-map nav links
+const navMap = {};
+navLinks.forEach(link => {
+  const id = link.getAttribute("href").replace("#", "");
+  navMap[id] = link;
+});
+
+// 🔥 Ensure initial visual state is consistent
+categories.forEach(category => {
+  category.style.opacity = "1";
+  category.style.transform = "scale(1)";
+});
 
 vegToggle.addEventListener("change", () => {
 
-document.body.classList.toggle("veg-active");
+  document.body.classList.toggle("veg-active");
 
-const nonVegItems = document.querySelectorAll(".nonveg, .egg");
+  let firstVisibleCategory = null;
 
-nonVegItems.forEach(item => {
-item.style.display = vegToggle.checked ? "none" : "block";
+  categories.forEach(category => {
+
+    const items = category.querySelectorAll(".menu-card");
+    let visibleCount = 0;
+
+    // 🔥 Filter items
+    items.forEach(item => {
+      const isNonVeg =
+        item.classList.contains("nonveg") ||
+        item.classList.contains("egg");
+
+      const shouldHide = vegToggle.checked && isNonVeg;
+
+      item.style.display = shouldHide ? "none" : "block";
+
+      if (!shouldHide) visibleCount++;
+    });
+
+    const isVisible = visibleCount > 0;
+
+    // 🔥 Clear any pending hide timeout (fix race condition)
+    if (category.hideTimeout) {
+      clearTimeout(category.hideTimeout);
+    }
+
+    if (!isVisible) {
+      // fade out
+      category.style.opacity = "0";
+      category.style.transform = "scale(0.98)";
+
+      category.hideTimeout = setTimeout(() => {
+        category.style.display = "none";
+      }, 250);
+
+    } else {
+      // show first
+      category.style.display = "block";
+
+      // animate in
+      setTimeout(() => {
+        category.style.opacity = "1";
+        category.style.transform = "scale(1)";
+      }, 10);
+    }
+
+    // 🔥 Nav sync
+    const id = category.id;
+    if (navMap[id]) {
+      navMap[id].style.display = isVisible ? "inline-block" : "none";
+    }
+
+    // track first visible
+    if (isVisible && !firstVisibleCategory) {
+      firstVisibleCategory = category;
+    }
+
+  });
+
+  // 🔥 Safer scroll behavior
+  if (firstVisibleCategory && window.scrollY < 200) {
+    firstVisibleCategory.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+  }
+
 });
-
-});
-
 </script>

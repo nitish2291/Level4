@@ -780,6 +780,7 @@ display:block;
                                 .menu-category{
                                   margin-top:60px;
                                   scroll-margin-top:220px;
+                                  transition: opacity 0.3s ease, transform 0.3s ease;
                                 }
 
                                         .menu-nav a.active{
@@ -1419,4 +1420,19 @@ display:block;
                                                                                                                                     0 0 0 1px rgba(90,255,150,.2),
                                                                                                                                     0 8px 20px rgba(0,0,0,.4);
                                                                                                                                     
+                                                                                                                                    }
+
+                                                                                                                                    .menu-full-btn {
+                                                                                                                                      margin-left: 12px;
+                                                                                                                                      padding: 8px 14px;
+                                                                                                                                      border-radius: 6px;
+                                                                                                                                      background: #222;
+                                                                                                                                      color: #fff;
+                                                                                                                                      font-size: 14px;
+                                                                                                                                      text-decoration: none;
+                                                                                                                                      transition: all 0.25s ease;
+                                                                                                                                    }
+                                                                                                                                    
+                                                                                                                                    .menu-full-btn:hover {
+                                                                                                                                      background: #444;
                                                                                                                                     }

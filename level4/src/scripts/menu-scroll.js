@@ -3,36 +3,42 @@ const navLinks = document.querySelectorAll(".menu-nav a");
 
 function activateMenu() {
 
-let current = "";
+  const visibleSections = Array.from(sections).filter(
+    section => section.style.display !== "none"
+  );
 
-sections.forEach(section => {
+  let current = "";
 
-const sectionTop = section.offsetTop - 220;
-const sectionHeight = section.offsetHeight;
+  visibleSections.forEach(section => {
 
-if (
-window.scrollY >= sectionTop &&
-window.scrollY < sectionTop + sectionHeight
-) {
-current = section.getAttribute("id");
-}
+    const sectionTop = section.offsetTop - 220;
+    const sectionHeight = section.offsetHeight;
 
-});
+    if (
+      window.scrollY >= sectionTop &&
+      window.scrollY < sectionTop + sectionHeight
+    ) {
+      current = section.getAttribute("id");
+    }
 
-/* ensure last section works */
-if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 2) {
-current = sections[sections.length - 1].id;
-}
+  });
 
-navLinks.forEach(link => {
+  // ensure last section works
+  if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 2) {
+    if (visibleSections.length > 0) {
+      current = visibleSections[visibleSections.length - 1].id;
+    }
+  }
 
-link.classList.remove("active");
+  navLinks.forEach(link => {
 
-if (link.getAttribute("href") === "#" + current) {
-link.classList.add("active");
-}
+    link.classList.remove("active");
 
-});
+    if (link.getAttribute("href") === "#" + current) {
+      link.classList.add("active");
+    }
+
+  });
 
 }
 
