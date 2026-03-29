@@ -535,7 +535,7 @@
       ]
     },
     {
-      "name": "Biryani",
+      "name": "Biryani & Rice",
       "items": [
         {
           "name": "Paneer Tikka Biryani",
@@ -572,6 +572,30 @@
           "price": 350,
           "type": "nonveg",
           "image": "/images/menu/biryani.jpg"
+        },
+        {
+          "name": "Steam Rice",
+          "price": 129,
+          "type": "veg",
+          "image": "/images/menu/rice.jpg"
+        },
+        {
+          "name": "Jeera Rice",
+          "price": 149,
+          "type": "veg",
+          "image": "/images/menu/rice.jpg"
+        },
+        {
+          "name": "Veg Pulao",
+          "price": 239,
+          "type": "veg",
+          "image": "/images/menu/rice.jpg"
+        },
+        {
+          "name": "Kashmiri Pulao",
+          "price": 270,
+          "type": "veg",
+          "image": "/images/menu/rice.jpg"
         }
       ]
     },
@@ -721,35 +745,6 @@
           "price": 400,
           "type": "nonveg",
           "image": "/images/menu/curry.jpg"
-        }
-      ]
-    },
-    {
-      "name": "Rice",
-      "items": [
-        {
-          "name": "Steam Rice",
-          "price": 129,
-          "type": "veg",
-          "image": "/images/menu/rice.jpg"
-        },
-        {
-          "name": "Jeera Rice",
-          "price": 149,
-          "type": "veg",
-          "image": "/images/menu/rice.jpg"
-        },
-        {
-          "name": "Veg Pulao",
-          "price": 239,
-          "type": "veg",
-          "image": "/images/menu/rice.jpg"
-        },
-        {
-          "name": "Kashmiri Pulao",
-          "price": 270,
-          "type": "veg",
-          "image": "/images/menu/rice.jpg"
         }
       ]
     },
